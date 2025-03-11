@@ -5,5 +5,5 @@
 
 (
 cd github.com/PalomoIFCA/testeractions &&
-    find_oph_workflows.py --path . --paath [arg]
+    git rev-parse --is-inside-work-tree 
 )

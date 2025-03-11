@@ -11,10 +11,58 @@ environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/PalomoIFCA/testeractions git:
+        commands:
+        - /usr/bin/env sh .sqa/script.snappy-jade-yak.sh
+        container: qc.acc_seedy-sangria-cuttlefish
+  QC.Doc:
+    repos:
+      github.com/PalomoIFCA/testeractions find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.scummy-zucchini-cuscus.sh
+        container: qc.doc_pretty-seashell-clam
+      github.com/PalomoIFCA/testeractions git:
+        commands:
+        - /usr/bin/env sh .sqa/script.baggy-thistle-oyster.sh
+        container: qc.doc_stuffy-asparagus-chameleon
+      github.com/PalomoIFCA/testeractions markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.slaphappy-flax-cow.sh
+        container: qc.doc_paltry-flax-frise
+  QC.Lic:
+    repos:
+      github.com/PalomoIFCA/testeractions licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.beady-rose-termite.sh
+        container: qc.lic_squirrely-ecru-panda
+  QC.Sec:
+    repos:
+      github.com/PalomoIFCA/testeractions bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.lousy-thistle-loon.sh
+        container: qc.sec_seedy-sangria-retriever
   QC.Sty:
     repos:
-      github.com/PalomoIFCA/testeractions find_oph_workflows.py:
+      github.com/PalomoIFCA/testeractions flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.ugly-chestnut-boar.sh
-        container: qc.sty_randy-cardinal-bordeaux
+        - /usr/bin/env sh .sqa/script.skanky-platinum-lobster.sh
+        container: qc.sty_scanty-cornflower-molly
+      github.com/PalomoIFCA/testeractions jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.homely-amber-emu.sh
+        container: qc.sty_homey-celadon-zorse
+  QC.Uni:
+    repos:
+      github.com/PalomoIFCA/testeractions pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.cozy-lemon-caracal.sh
+        container: qc.uni_shaggy-pink-bloodhound
+  QC.Ver:
+    repos:
+      github.com/PalomoIFCA/testeractions get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.grumpy-linen-dragonfly.sh
+        container: qc.ver_droopy-aqua-earwig
 timeout: 5400
