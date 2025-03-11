@@ -1,0 +1,20 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/2.2.1
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/PalomoIFCA/testeractions:
+      branch: master
+      repo: https://github.com/PalomoIFCA/testeractions
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Sty:
+    repos:
+      github.com/PalomoIFCA/testeractions find_oph_workflows.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.ugly-chestnut-boar.sh
+        container: qc.sty_randy-cardinal-bordeaux
+timeout: 5400
