@@ -15,54 +15,54 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions git:
         commands:
-        - /usr/bin/env sh .sqa/script.zippy-yellow-swan.sh
-        container: qc.acc_woozy-persimmon-ostrich
+        - /usr/bin/env sh .sqa/script.wimpy-jade-elephant.sh
+        container: qc.acc_squirrely-russet-dodo
   QC.Doc:
     repos:
       github.com/PalomoIFCA/testeractions find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.trippy-purple-bandicoot.sh
-        container: qc.doc_freaky-dandelion-emu
+        - /usr/bin/env sh .sqa/script.sickly-zucchini-lion.sh
+        container: qc.doc_homely-wisteria-warthog
       github.com/PalomoIFCA/testeractions git:
         commands:
-        - /usr/bin/env sh .sqa/script.grumpy-purple-wolf.sh
-        container: qc.doc_hasty-cornflower-wrasse
+        - /usr/bin/env sh .sqa/script.snoopy-turquoise-swan.sh
+        container: qc.doc_trippy-pumpkin-chin
       github.com/PalomoIFCA/testeractions markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.snoopy-aquamarine-jackal.sh
-        container: qc.doc_foggy-magenta-giraffe
+        - /usr/bin/env sh .sqa/script.frumpy-aquamarine-drever.sh
+        container: qc.doc_sloppy-cinnabar-caracal
   QC.Lic:
     repos:
       github.com/PalomoIFCA/testeractions licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.sloppy-chocolate-starfish.sh
-        container: qc.lic_snippy-cardinal-duck
+        - /usr/bin/env sh .sqa/script.craggy-sapphire-emu.sh
+        container: qc.lic_tasty-pumpkin-llama
   QC.Sec:
     repos:
       github.com/PalomoIFCA/testeractions bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.ugly-mustard-zonkey.sh
-        container: qc.sec_pasty-lime-mau
+        - /usr/bin/env sh .sqa/script.messy-myrtle-zebra.sh
+        container: qc.sec_slaphappy-buff-gopher
   QC.Sty:
     repos:
       github.com/PalomoIFCA/testeractions flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.geeky-olive-balinese.sh
-        container: qc.sty_bumpy-violet-bison
+        - /usr/bin/env sh .sqa/script.chewy-lilac-eel.sh
+        container: qc.sty_sunny-green-zebra
       github.com/PalomoIFCA/testeractions jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.bluesy-red-zonkey.sh
-        container: qc.sty_baggy-lavender-collie
+        - /usr/bin/env sh .sqa/script.woozy-xanthic-snail.sh
+        container: qc.sty_bluesy-taupe-crab
   QC.Uni:
     repos:
       github.com/PalomoIFCA/testeractions pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.boozy-maroon-stingray.sh
-        container: qc.uni_pokey-bronze-mole
+        - /usr/bin/env sh .sqa/script.flaky-puce-macaque.sh
+        container: qc.uni_woozy-cerise-wolf
   QC.Ver:
     repos:
       github.com/PalomoIFCA/testeractions get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.chummy-amber-mule.sh
-        container: qc.ver_goopy-aquamarine-kakapo
+        - /usr/bin/env sh .sqa/script.shaggy-beige-grouse.sh
+        container: qc.ver_sleazy-zucchini-zebu
 timeout: 5400
