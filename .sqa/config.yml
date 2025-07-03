@@ -2,67 +2,19 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.2.1
+      branch: feature/Ophidia
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/PalomoIFCA/testeractions:
-      branch: master
+      branch: devel
       repo: https://github.com/PalomoIFCA/testeractions
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
-  QC.Acc:
-    repos:
-      github.com/PalomoIFCA/testeractions git:
-        commands:
-        - /usr/bin/env sh .sqa/script.trippy-violet-schnauzer.sh
-        container: qc.acc_lumpy-olivine-rabbit
-  QC.Doc:
-    repos:
-      github.com/PalomoIFCA/testeractions find_doc_files.py:
-        commands:
-        - /usr/bin/env sh .sqa/script.shabby-cinnabar-akita.sh
-        container: qc.doc_cozy-seashell-discus
-      github.com/PalomoIFCA/testeractions git:
-        commands:
-        - /usr/bin/env sh .sqa/script.shaky-firebrick-cassowary.sh
-        container: qc.doc_trippy-buff-molly
-      github.com/PalomoIFCA/testeractions markdownlint:
-        commands:
-        - /usr/bin/env sh .sqa/script.hasty-gamboge-cow.sh
-        container: qc.doc_gamy-orange-earwig
-  QC.Lic:
-    repos:
-      github.com/PalomoIFCA/testeractions licensee:
-        commands:
-        - /usr/bin/env sh .sqa/script.seedy-brass-forest.sh
-        container: qc.lic_skanky-platinum-shrimp
-  QC.Sec:
-    repos:
-      github.com/PalomoIFCA/testeractions bandit:
-        commands:
-        - /usr/bin/env sh .sqa/script.sleazy-bronze-dodo.sh
-        container: qc.sec_fuzzy-amaranth-drever
   QC.Sty:
     repos:
-      github.com/PalomoIFCA/testeractions flake8:
+      github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-aqua-butterfly.sh
-        container: qc.sty_skanky-lime-zebu
-      github.com/PalomoIFCA/testeractions jsonlint:
-        commands:
-        - /usr/bin/env sh .sqa/script.pretty-tomato-antelope.sh
-        container: qc.sty_cozy-ultramarine-nightingale
-  QC.Uni:
-    repos:
-      github.com/PalomoIFCA/testeractions pytest:
-        commands:
-        - /usr/bin/env sh .sqa/script.nerdy-zucchini-numbat.sh
-        container: qc.uni_jumpy-platinum-stoat
-  QC.Ver:
-    repos:
-      github.com/PalomoIFCA/testeractions get_git_tags.py:
-        commands:
-        - /usr/bin/env sh .sqa/script.zippy-cerulean-buffalo.sh
-        container: qc.ver_scanty-cinnabar-heron
+        - /usr/bin/env sh .sqa/script.freaky-lime-mayfly.sh
+        container: qc.sty_boozy-sangria-zebu
 timeout: 5400
