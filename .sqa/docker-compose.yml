@@ -1,5 +1,5 @@
 services:
-  qc.sty_chummy-maroon-owl:
+  qc.sty_chewy-chocolate-scorpion:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
