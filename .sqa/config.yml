@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.silly-thistle-barnacle.sh
-        container: qc.sty_crappy-pear-stoat
+        - /usr/bin/env sh .sqa/script.sleepy-tangerine-gorilla.sh
+        container: qc.sty_squeaky-puce-zonkey
 timeout: 5400
