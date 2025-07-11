@@ -1,5 +1,5 @@
 services:
-  qc.sty_wheezy-carmine-tuatara:
+  qc.sty_scummy-burgundy-ant:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
