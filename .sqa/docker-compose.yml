@@ -1,5 +1,5 @@
 services:
-  qc.sty_stinky-thistle-hedgehog:
+  qc.sty_slimy-cream-argentino:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
