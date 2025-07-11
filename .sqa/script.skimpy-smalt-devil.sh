@@ -5,5 +5,5 @@
 
 (
 cd github.com/PalomoIFCA/testeractions &&
-    find_oph_workflows.py --path ./
+    find_oph_workflows.py --path example/
 )
