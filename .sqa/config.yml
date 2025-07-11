@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.cloudy-heliotrope-bulldog.sh
-        container: qc.sty_scummy-burgundy-ant
+        - /usr/bin/env sh .sqa/script.slimy-silver-foxhound.sh
+        container: qc.sty_blurry-champagne-cuscus
 timeout: 5400
