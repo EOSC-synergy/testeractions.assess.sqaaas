@@ -1,5 +1,5 @@
 services:
-  qc.sty_blurry-champagne-cuscus:
+  qc.sty_frumpy-cinnamon-argentino:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
