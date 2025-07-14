@@ -1,0 +1,984 @@
+{
+    "meta": {
+        "version": "3.5.0",
+        "report_json_url": "https://raw.githubusercontent.com/eosc-synergy/testeractions.assess.sqaaas/master/.report/assessment_output.json",
+        "report_permalink": "https://sqaaas.eosc-synergy.eu/full-assessment/report/https://raw.githubusercontent.com/eosc-synergy/testeractions.assess.sqaaas/master/.report/assessment_output.json",
+        "timestamp": 1752490227.8889923
+    },
+    "repository": [
+        {
+            "url": "https://github.com/PalomoIFCA/testeractions",
+            "name": "PalomoIFCA/testeractions",
+            "tag": "master",
+            "commit_id": "56c0bfef1bf0a948e4cdef2a2f820c33592ec531",
+            "is_main_repo": true,
+            "avatar_url": "https://avatars.githubusercontent.com/u/143794185?v=4",
+            "description": null,
+            "languages": null,
+            "topics": null,
+            "stargazers_count": null,
+            "watchers_count": null,
+            "contributors_count": null,
+            "forks_count": null,
+            "badge_status": "no_badge"
+        }
+    ],
+    "report": {
+        "QC.Acc": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Acc01": {
+                    "description": "Is the source code managed with a Version Control System?",
+                    "requirement_level": "MUST",
+                    "hint": "The source code shall be managed with Git and remain publicly available for this criterion to be successful. Please check <a href=\"https://git-scm.com/book/es/v2\" target=\"_blank\">Pro Git</a> docs about how to get started using Git tool. Guidelines provided by the most popular social coding platforms (<a href=\"https://docs.github.com/get-started\" target=\"_blank\">GitHub</a>, <a href=\"https://about.gitlab.com/get-started/\" target=\"_blank\">GitLab</a>) are also a good starting point",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Source code uses Git for version control",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": "scm",
+                                "version": "2.34.1",
+                                "docker": {
+                                    "image": "bitnami/git:2.34.1",
+                                    "reviewed": "2021-12-30"
+                                },
+                                "ci": {
+                                    "name": "QC.Acc github.com/PalomoIFCA/testeractions git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/34/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Doc": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Doc06.1": {
+                    "description": "Is the software scope outlined in the code repository?",
+                    "requirement_level": "MUST",
+                    "hint": "A README file presents your software to the audience interested in your software project. Several online sites simplify the task of creating the README file, such as <a href=\"https://www.makeareadme.com/\" target=\"_blank\">Make a README</a> or <a href=\"https://readme.so/\" target=\"_blank\">readme.so</a> sites. Be sure to add it to the code repository's root path",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "A README file is present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/PalomoIFCA/testeractions find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 245}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 245
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc06.3": {
+                    "description": "Does the project establish a code of conduct for its participants?",
+                    "requirement_level": "MUST",
+                    "hint": "A CODE_OF_CONDUCT file sets the path for a constructive, respectful and positive atmosphere among all the contributors in your software project. Of course you can define your own, but in case you want to rely on external and widely-adopted code of conducts check out some of the most popular ones: <a href=\"https://contributor-covenant.org/\" target=\"_blank\">Contributor Covenant</a> or <a href=\"https://web.archive.org/web/20200330154000/http://citizencodeofconduct.org/\" target=\"_blank\">Citizen Code of Conduct</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CODE_OF_CONDUCT file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/PalomoIFCA/testeractions find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 245}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 245
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc06.2": {
+                    "description": "Is there a clear path or guidelines on how to contribute to the code?",
+                    "requirement_level": "MUST",
+                    "hint": "A CONTRIBUTING file shall be present in the root path of the code repository describing the expected workflow to follow when adding contributions. Please check <a href=\"https://mozillascience.github.io/working-open-workshop/contributing/\" target=\"_blank\">Mozilla's guidelines</a> and <a href=\"https://github.com/github/docs/blob/main/CONTRIBUTING.md\" target=\"_blank\">GitHub's CONTRIBUTING.md example</a> to get inspired on how to write a good CONTRIBUTING file",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CONTRIBUTING file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/PalomoIFCA/testeractions find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 245}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": []}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 245
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": []
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc01.1": {
+                    "description": "Are docs managed in the same repository as code?",
+                    "requirement_level": "MAY",
+                    "hint": "This subcriterion will succeed if the documentation files exist on the same repository as the source code, e.g. under a <code>docs/</code> folder",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Documentation resides in the same repository as code",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": null,
+                                "version": null,
+                                "docker": null,
+                                "ci": {
+                                    "name": "QC.Doc github.com/PalomoIFCA/testeractions git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/52/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc02.X": {
+                    "description": "Are docs following a style for the Markdown markup language?",
+                    "requirement_level": "MAY",
+                    "hint": "When using a docs-as-code approach, the style of the markup language is being checked. SQAaaS relies on <a href=\"https://github.com/markdownlint/markdownlint/\" target=\"_blank\">markdownlint</a> for Markdown files and <a href=\"https://github.com/twolfson/restructuredtext-lint/\" target=\"_blank\">restructuredtext-lint</a> for reStructuredText",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Docs are not fully compliant with markdownlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-markdownlint",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "markdownlint",
+                                "lang": "Markdown",
+                                "version": "0.11.0",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/markdownlint/Dockerfile",
+                                    "reviewed": "1970-01-01"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc github.com/PalomoIFCA/testeractions markdownlint",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "mdl --json  ."
+                                    ],
+                                    "stdout_text": "[{\"filename\":\"./README.md\",\"line\":3,\"rule\":\"MD001\",\"aliases\":[\"header-increment\"],\"description\":\"Header levels should only increment by one level at a time\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md001---header-levels-should-only-increment-by-one-level-at-a-time\"},{\"filename\":\"./README.md\",\"line\":7,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":5,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"}]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/61/log?consoleFull"
+                                },
+                                "level": "RECOMMENDED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "./README.md": {
+                                    "MD001": {
+                                        "description": "Header levels should only increment by one level at a time",
+                                        "line": [
+                                            3
+                                        ]
+                                    },
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            7
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            5
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 40,
+                "total_subcriteria": 5,
+                "success_subcriteria": 2
+            }
+        },
+        "QC.Lic": {
+            "valid": false,
+            "subcriteria": {},
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 0,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Sec": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Sec02": {
+                    "description": "Is the source code passing Static Analysis Security Testing (SAST)?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the SAST tool",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Source code files pass SAST checks performed by bandit tool",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-bandit",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "bandit",
+                                "lang": "Python",
+                                "version": "1.7.4",
+                                "docker": {
+                                    "dockerfile": "QC.Sec/bandit/Dockerfile",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sec github.com/PalomoIFCA/testeractions bandit",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "bandit -f json --quiet  --confidence-level high --severity-level high --recursive  ."
+                                    ],
+                                    "stdout_text": "{\n  \"errors\": [],\n  \"generated_at\": \"2025-07-14T10:48:44Z\",\n  \"metrics\": {\n    \"./.github/workflows/request.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 56,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./dtr/script/ensemble.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 54,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./helloworld.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 1,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./indigo/precip_trend_analisys/script/precip_trend_analysis.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 62,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 54,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./multi-model-analysis/script/ensemble_analysis.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 54,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./multi-model-analysis/script/single_analysis.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 62,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./notebooks/python/Aggregated_map.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 25,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./notebooks/python/DTR.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 63,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./notebooks/python/Subsetted_map.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 24,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./notebooks/python/Time_series_difference.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 16,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./notebooks/python/Time_series_extraction.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 24,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./notebooks/python/Tropical_nights.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 39,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 534,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/79/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "errors": [],
+                                "generated_at": "2025-07-14T10:48:44Z",
+                                "metrics": {
+                                    "./.github/workflows/request.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 56,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./dtr/script/ensemble.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 54,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./helloworld.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 1,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./indigo/precip_trend_analisys/script/precip_trend_analysis.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 62,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 54,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./multi-model-analysis/script/ensemble_analysis.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 54,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./multi-model-analysis/script/single_analysis.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 62,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./notebooks/python/Aggregated_map.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 25,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./notebooks/python/DTR.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 63,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./notebooks/python/Subsetted_map.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 24,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./notebooks/python/Time_series_difference.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 16,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./notebooks/python/Time_series_extraction.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 24,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./notebooks/python/Tropical_nights.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 39,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "_totals": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 534,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    }
+                                },
+                                "results": []
+                            }
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Sty": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Sty01": {
+                    "description": "Is the software product following a style standard for Python files?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the linter tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Python files are not fully compliant with flake8 (pycodestyle, pyflakes, mccabe) standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-flake8",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "flake8",
+                                "lang": "Python",
+                                "version": "4.0.1 (mccabe: 0.6.1, pycodestyle: 2.8.0, pyflakes: 2.4.0)",
+                                "docker": {
+                                    "image": "pipelinecomponents/flake8:0.9.0",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty github.com/PalomoIFCA/testeractions flake8",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "flake8 ."
+                                    ],
+                                    "stdout_text": "./multi-model-analysis/script/single_analysis.py:39:80: E501 line too long (85 > 79 characters)\n./multi-model-analysis/script/single_analysis.py:55:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:56:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:58:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:59:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:61:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:62:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:91:20: E225 missing whitespace around operator\n./multi-model-analysis/script/single_analysis.py:92:21: E225 missing whitespace around operator\n./multi-model-analysis/script/single_analysis.py:103:1: W391 blank line at end of file\n./multi-model-analysis/script/ensemble_analysis.py:37:80: E501 line too long (85 > 79 characters)\n./multi-model-analysis/script/ensemble_analysis.py:81:20: E225 missing whitespace around operator\n./multi-model-analysis/script/ensemble_analysis.py:82:21: E225 missing whitespace around operator\n./multi-model-analysis/script/ensemble_analysis.py:92:1: W391 blank line at end of file\n./dtr/script/ensemble.py:36:80: E501 line too long (85 > 79 characters)\n./dtr/script/ensemble.py:80:20: E225 missing whitespace around operator\n./dtr/script/ensemble.py:81:21: E225 missing whitespace around operator\n./dtr/script/ensemble.py:92:1: W391 blank line at end of file\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:39:80: E501 line too long (85 > 79 characters)\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:55:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:56:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:58:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:59:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:61:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:62:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:91:20: E225 missing whitespace around operator\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:92:21: E225 missing whitespace around operator\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:103:1: W391 blank line at end of file\n./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py:37:80: E501 line too long (85 > 79 characters)\n./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py:81:20: E225 missing whitespace around operator\n./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py:82:21: E225 missing whitespace around operator\n./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py:93:1: W391 blank line at end of file\n./.github/workflows/request.py:1:1: E265 block comment should start with '# '\n./.github/workflows/request.py:4:1: E402 module level import not at top of file\n./.github/workflows/request.py:5:1: F401 'json' imported but unused\n./.github/workflows/request.py:5:1: E402 module level import not at top of file\n./.github/workflows/request.py:7:1: F401 'sys' imported but unused\n./.github/workflows/request.py:7:1: E402 module level import not at top of file\n./.github/workflows/request.py:8:1: E402 module level import not at top of file\n./.github/workflows/request.py:12:8: E225 missing whitespace around operator\n./.github/workflows/request.py:28:80: E501 line too long (193 > 79 characters)\n./.github/workflows/request.py:29:26: E231 missing whitespace after ','\n./.github/workflows/request.py:29:80: E501 line too long (200 > 79 characters)\n./.github/workflows/request.py:30:1: W293 blank line contains whitespace\n./.github/workflows/request.py:36:36: E231 missing whitespace after ':'\n./.github/workflows/request.py:37:36: E231 missing whitespace after ':'\n./.github/workflows/request.py:48:1: E265 block comment should start with '# '\n./.github/workflows/request.py:49:1: E265 block comment should start with '# '\n./.github/workflows/request.py:49:80: E501 line too long (133 > 79 characters)\n./.github/workflows/request.py:50:5: E225 missing whitespace around operator\n./.github/workflows/request.py:50:80: E501 line too long (132 > 79 characters)\n./.github/workflows/request.py:50:119: E231 missing whitespace after ','\n./.github/workflows/request.py:51:6: E211 whitespace before '('\n./.github/workflows/request.py:51:12: E231 missing whitespace after ','\n./.github/workflows/request.py:52:1: E265 block comment should start with '# '\n./.github/workflows/request.py:53:4: E225 missing whitespace around operator\n./.github/workflows/request.py:59:1: E265 block comment should start with '# '\n./.github/workflows/request.py:61:4: E225 missing whitespace around operator\n./.github/workflows/request.py:61:80: E501 line too long (87 > 79 characters)\n./.github/workflows/request.py:62:1: E265 block comment should start with '# '\n./.github/workflows/request.py:63:6: E211 whitespace before '('\n./.github/workflows/request.py:63:11: E231 missing whitespace after ','\n./.github/workflows/request.py:64:1: E265 block comment should start with '# '\n./.github/workflows/request.py:65:1: E265 block comment should start with '# '\n./.github/workflows/request.py:68:13: W291 trailing whitespace\n./.github/workflows/request.py:69:11: E225 missing whitespace around operator\n./.github/workflows/request.py:69:80: E501 line too long (96 > 79 characters)\n./.github/workflows/request.py:71:5: E265 block comment should start with '# '\n./.github/workflows/request.py:72:37: E225 missing whitespace around operator\n./.github/workflows/request.py:73:15: E225 missing whitespace around operator\n./.github/workflows/request.py:73:80: E501 line too long (100 > 79 characters)\n./.github/workflows/request.py:75:1: W391 blank line at end of file\n./notebooks/python/Time_series_extraction.py:8:1: F401 'PyOphidia.client' imported but unused\n./notebooks/python/Time_series_extraction.py:16:72: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:16:80: E501 line too long (110 > 79 characters)\n./notebooks/python/Time_series_extraction.py:16:86: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:16:101: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:17:47: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:17:71: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:17:80: E501 line too long (80 > 79 characters)\n./notebooks/python/Time_series_extraction.py:25:1: E402 module level import not at top of file\n./notebooks/python/Time_series_extraction.py:41:80: E501 line too long (110 > 79 characters)\n./notebooks/python/Time_series_extraction.py:41:88: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:58:1: W391 blank line at end of file\n./notebooks/python/Subsetted_map.py:8:1: F401 'PyOphidia.client' imported but unused\n./notebooks/python/Subsetted_map.py:12:80: E501 line too long (87 > 79 characters)\n./notebooks/python/Subsetted_map.py:16:72: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:16:80: E501 line too long (110 > 79 characters)\n./notebooks/python/Subsetted_map.py:16:86: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:16:101: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:17:52: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:17:80: E501 line too long (96 > 79 characters)\n./notebooks/python/Subsetted_map.py:17:87: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:18:41: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:27:1: E402 module level import not at top of file\n./notebooks/python/Subsetted_map.py:28:1: F401 'mpl_toolkits.basemap.cm' imported but unused\n./notebooks/python/Subsetted_map.py:28:1: E402 module level import not at top of file\n./notebooks/python/Subsetted_map.py:29:1: E402 module level import not at top of file\n./notebooks/python/Subsetted_map.py:36:3: E221 multiple spaces before operator\n./notebooks/python/Subsetted_map.py:36:24: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:36:28: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:36:32: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:38:31: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:38:42: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Subsetted_map.py:38:46: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:38:57: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Subsetted_map.py:38:73: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:38:80: E501 line too long (103 > 79 characters)\n./notebooks/python/Subsetted_map.py:41:29: E201 whitespace after '('\n./notebooks/python/Subsetted_map.py:41:37: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:41:41: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:41:51: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:41:53: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:41:55: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:33: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:37: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:41: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:51: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:53: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:55: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:44:28: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:24: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:26: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:30: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:44: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:48: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:53: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:47:27: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:47:44: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:51:1: W391 blank line at end of file\n./notebooks/python/DTR.py:4:80: E501 line too long (81 > 79 characters)\n./notebooks/python/DTR.py:17:80: E501 line too long (90 > 79 characters)\n./notebooks/python/DTR.py:32:80: E501 line too long (90 > 79 characters)\n./notebooks/python/DTR.py:65:13: W291 trailing whitespace\n./notebooks/python/DTR.py:77:11: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/DTR.py:77:13: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/DTR.py:87:1: E402 module level import not at top of file\n./notebooks/python/DTR.py:88:1: F401 'mpl_toolkits.basemap.cm' imported but unused\n./notebooks/python/DTR.py:88:1: E402 module level import not at top of file\n./notebooks/python/DTR.py:89:1: E402 module level import not at top of file\n./notebooks/python/DTR.py:97:3: E221 multiple spaces before operator\n./notebooks/python/DTR.py:97:24: E231 missing whitespace after ','\n./notebooks/python/DTR.py:97:28: E231 missing whitespace after ','\n./notebooks/python/DTR.py:97:32: E231 missing whitespace after ','\n./notebooks/python/DTR.py:99:31: E231 missing whitespace after ','\n./notebooks/python/DTR.py:99:42: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/DTR.py:99:46: E231 missing whitespace after ','\n./notebooks/python/DTR.py:99:57: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/DTR.py:99:73: E231 missing whitespace after ','\n./notebooks/python/DTR.py:99:80: E501 line too long (103 > 79 characters)\n./notebooks/python/DTR.py:102:29: E201 whitespace after '('\n./notebooks/python/DTR.py:102:37: E231 missing whitespace after ','\n./notebooks/python/DTR.py:102:41: E231 missing whitespace after ','\n./notebooks/python/DTR.py:102:51: E231 missing whitespace after ','\n./notebooks/python/DTR.py:102:53: E231 missing whitespace after ','\n./notebooks/python/DTR.py:102:55: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:33: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:37: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:41: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:51: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:53: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:55: E231 missing whitespace after ','\n./notebooks/python/DTR.py:105:28: E231 missing whitespace after ','\n./notebooks/python/DTR.py:107:20: E231 missing whitespace after ','\n./notebooks/python/DTR.py:107:23: E231 missing whitespace after ','\n./notebooks/python/DTR.py:109:24: E231 missing whitespace after ','\n./notebooks/python/DTR.py:109:26: E231 missing whitespace after ','\n./notebooks/python/DTR.py:109:30: E231 missing whitespace after ','\n./notebooks/python/DTR.py:109:36: E231 missing whitespace after ','\n./notebooks/python/DTR.py:110:27: E231 missing whitespace after ','\n./notebooks/python/DTR.py:119:1: W391 blank line at end of file\n./notebooks/python/Tropical_nights.py:4:80: E501 line too long (111 > 79 characters)\n./notebooks/python/Tropical_nights.py:5:80: E501 line too long (106 > 79 characters)\n./notebooks/python/Tropical_nights.py:19:80: E501 line too long (106 > 79 characters)\n./notebooks/python/Tropical_nights.py:20:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:21:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:22:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:23:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:23:43: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:23:80: E501 line too long (82 > 79 characters)\n./notebooks/python/Tropical_nights.py:24:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:25:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:26:5: E124 closing bracket does not match visual indentation\n./notebooks/python/Tropical_nights.py:34:80: E501 line too long (80 > 79 characters)\n./notebooks/python/Tropical_nights.py:59:1: E402 module level import not at top of file\n./notebooks/python/Tropical_nights.py:60:1: F401 'mpl_toolkits.basemap.cm' imported but unused\n./notebooks/python/Tropical_nights.py:60:1: E402 module level import not at top of file\n./notebooks/python/Tropical_nights.py:61:1: E402 module level import not at top of file\n./notebooks/python/Tropical_nights.py:69:3: E221 multiple spaces before operator\n./notebooks/python/Tropical_nights.py:69:24: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:69:28: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:69:32: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:71:31: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:71:42: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Tropical_nights.py:71:46: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:71:57: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Tropical_nights.py:71:73: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:71:80: E501 line too long (103 > 79 characters)\n./notebooks/python/Tropical_nights.py:74:29: E201 whitespace after '('\n./notebooks/python/Tropical_nights.py:74:37: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:74:41: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:74:51: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:74:53: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:74:55: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:33: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:37: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:41: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:51: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:53: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:55: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:77:28: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:79:20: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:79:24: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:81:24: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:81:26: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:81:30: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:81:36: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:82:27: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:91:1: W391 blank line at end of file\n./notebooks/python/Aggregated_map.py:8:1: F401 'PyOphidia.client' imported but unused\n./notebooks/python/Aggregated_map.py:16:72: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:16:80: E501 line too long (132 > 79 characters)\n./notebooks/python/Aggregated_map.py:16:86: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:16:101: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:16:123: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:17:40: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:26:1: E402 module level import not at top of file\n./notebooks/python/Aggregated_map.py:27:1: F401 'mpl_toolkits.basemap.cm' imported but unused\n./notebooks/python/Aggregated_map.py:27:1: E402 module level import not at top of file\n./notebooks/python/Aggregated_map.py:28:1: E402 module level import not at top of file\n./notebooks/python/Aggregated_map.py:35:3: E221 multiple spaces before operator\n./notebooks/python/Aggregated_map.py:35:24: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:35:28: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:35:32: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:37:31: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:37:42: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Aggregated_map.py:37:46: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:37:57: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Aggregated_map.py:37:73: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:37:80: E501 line too long (103 > 79 characters)\n./notebooks/python/Aggregated_map.py:40:29: E201 whitespace after '('\n./notebooks/python/Aggregated_map.py:40:37: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:40:41: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:40:51: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:40:53: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:40:55: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:33: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:37: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:41: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:51: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:53: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:55: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:43:28: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:45:22: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:45:26: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:47:24: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:47:26: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:47:30: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:47:36: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:48:27: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:58:67: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:58:80: E501 line too long (89 > 79 characters)\n./notebooks/python/Time_series_difference.py:8:1: F401 'PyOphidia.client' imported but unused\n./notebooks/python/Time_series_difference.py:12:80: E501 line too long (107 > 79 characters)\n./notebooks/python/Time_series_difference.py:16:72: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:16:80: E501 line too long (110 > 79 characters)\n./notebooks/python/Time_series_difference.py:16:86: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:16:101: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:17:54: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:17:80: E501 line too long (93 > 79 characters)\n./notebooks/python/Time_series_difference.py:17:84: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:18:55: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:18:80: E501 line too long (96 > 79 characters)\n./notebooks/python/Time_series_difference.py:18:87: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:27:1: E402 module level import not at top of file\n./notebooks/python/Time_series_difference.py:35:80: E501 line too long (120 > 79 characters)\n./notebooks/python/Time_series_difference.py:37:1: W391 blank line at end of file",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/88/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": "./multi-model-analysis/script/single_analysis.py:39:80: E501 line too long (85 > 79 characters)\n./multi-model-analysis/script/single_analysis.py:55:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:56:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:58:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:59:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:61:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:62:1: W191 indentation contains tabs\n./multi-model-analysis/script/single_analysis.py:91:20: E225 missing whitespace around operator\n./multi-model-analysis/script/single_analysis.py:92:21: E225 missing whitespace around operator\n./multi-model-analysis/script/single_analysis.py:103:1: W391 blank line at end of file\n./multi-model-analysis/script/ensemble_analysis.py:37:80: E501 line too long (85 > 79 characters)\n./multi-model-analysis/script/ensemble_analysis.py:81:20: E225 missing whitespace around operator\n./multi-model-analysis/script/ensemble_analysis.py:82:21: E225 missing whitespace around operator\n./multi-model-analysis/script/ensemble_analysis.py:92:1: W391 blank line at end of file\n./dtr/script/ensemble.py:36:80: E501 line too long (85 > 79 characters)\n./dtr/script/ensemble.py:80:20: E225 missing whitespace around operator\n./dtr/script/ensemble.py:81:21: E225 missing whitespace around operator\n./dtr/script/ensemble.py:92:1: W391 blank line at end of file\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:39:80: E501 line too long (85 > 79 characters)\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:55:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:56:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:58:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:59:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:61:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:62:1: W191 indentation contains tabs\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:91:20: E225 missing whitespace around operator\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:92:21: E225 missing whitespace around operator\n./indigo/precip_trend_analisys/script/precip_trend_analysis.py:103:1: W391 blank line at end of file\n./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py:37:80: E501 line too long (85 > 79 characters)\n./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py:81:20: E225 missing whitespace around operator\n./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py:82:21: E225 missing whitespace around operator\n./indigo/precip_trend_analisys/script/precip_trend_analysis_ensemble.py:93:1: W391 blank line at end of file\n./.github/workflows/request.py:1:1: E265 block comment should start with '# '\n./.github/workflows/request.py:4:1: E402 module level import not at top of file\n./.github/workflows/request.py:5:1: F401 'json' imported but unused\n./.github/workflows/request.py:5:1: E402 module level import not at top of file\n./.github/workflows/request.py:7:1: F401 'sys' imported but unused\n./.github/workflows/request.py:7:1: E402 module level import not at top of file\n./.github/workflows/request.py:8:1: E402 module level import not at top of file\n./.github/workflows/request.py:12:8: E225 missing whitespace around operator\n./.github/workflows/request.py:28:80: E501 line too long (193 > 79 characters)\n./.github/workflows/request.py:29:26: E231 missing whitespace after ','\n./.github/workflows/request.py:29:80: E501 line too long (200 > 79 characters)\n./.github/workflows/request.py:30:1: W293 blank line contains whitespace\n./.github/workflows/request.py:36:36: E231 missing whitespace after ':'\n./.github/workflows/request.py:37:36: E231 missing whitespace after ':'\n./.github/workflows/request.py:48:1: E265 block comment should start with '# '\n./.github/workflows/request.py:49:1: E265 block comment should start with '# '\n./.github/workflows/request.py:49:80: E501 line too long (133 > 79 characters)\n./.github/workflows/request.py:50:5: E225 missing whitespace around operator\n./.github/workflows/request.py:50:80: E501 line too long (132 > 79 characters)\n./.github/workflows/request.py:50:119: E231 missing whitespace after ','\n./.github/workflows/request.py:51:6: E211 whitespace before '('\n./.github/workflows/request.py:51:12: E231 missing whitespace after ','\n./.github/workflows/request.py:52:1: E265 block comment should start with '# '\n./.github/workflows/request.py:53:4: E225 missing whitespace around operator\n./.github/workflows/request.py:59:1: E265 block comment should start with '# '\n./.github/workflows/request.py:61:4: E225 missing whitespace around operator\n./.github/workflows/request.py:61:80: E501 line too long (87 > 79 characters)\n./.github/workflows/request.py:62:1: E265 block comment should start with '# '\n./.github/workflows/request.py:63:6: E211 whitespace before '('\n./.github/workflows/request.py:63:11: E231 missing whitespace after ','\n./.github/workflows/request.py:64:1: E265 block comment should start with '# '\n./.github/workflows/request.py:65:1: E265 block comment should start with '# '\n./.github/workflows/request.py:68:13: W291 trailing whitespace\n./.github/workflows/request.py:69:11: E225 missing whitespace around operator\n./.github/workflows/request.py:69:80: E501 line too long (96 > 79 characters)\n./.github/workflows/request.py:71:5: E265 block comment should start with '# '\n./.github/workflows/request.py:72:37: E225 missing whitespace around operator\n./.github/workflows/request.py:73:15: E225 missing whitespace around operator\n./.github/workflows/request.py:73:80: E501 line too long (100 > 79 characters)\n./.github/workflows/request.py:75:1: W391 blank line at end of file\n./notebooks/python/Time_series_extraction.py:8:1: F401 'PyOphidia.client' imported but unused\n./notebooks/python/Time_series_extraction.py:16:72: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:16:80: E501 line too long (110 > 79 characters)\n./notebooks/python/Time_series_extraction.py:16:86: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:16:101: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:17:47: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:17:71: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:17:80: E501 line too long (80 > 79 characters)\n./notebooks/python/Time_series_extraction.py:25:1: E402 module level import not at top of file\n./notebooks/python/Time_series_extraction.py:41:80: E501 line too long (110 > 79 characters)\n./notebooks/python/Time_series_extraction.py:41:88: E231 missing whitespace after ','\n./notebooks/python/Time_series_extraction.py:58:1: W391 blank line at end of file\n./notebooks/python/Subsetted_map.py:8:1: F401 'PyOphidia.client' imported but unused\n./notebooks/python/Subsetted_map.py:12:80: E501 line too long (87 > 79 characters)\n./notebooks/python/Subsetted_map.py:16:72: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:16:80: E501 line too long (110 > 79 characters)\n./notebooks/python/Subsetted_map.py:16:86: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:16:101: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:17:52: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:17:80: E501 line too long (96 > 79 characters)\n./notebooks/python/Subsetted_map.py:17:87: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:18:41: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:27:1: E402 module level import not at top of file\n./notebooks/python/Subsetted_map.py:28:1: F401 'mpl_toolkits.basemap.cm' imported but unused\n./notebooks/python/Subsetted_map.py:28:1: E402 module level import not at top of file\n./notebooks/python/Subsetted_map.py:29:1: E402 module level import not at top of file\n./notebooks/python/Subsetted_map.py:36:3: E221 multiple spaces before operator\n./notebooks/python/Subsetted_map.py:36:24: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:36:28: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:36:32: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:38:31: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:38:42: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Subsetted_map.py:38:46: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:38:57: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Subsetted_map.py:38:73: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:38:80: E501 line too long (103 > 79 characters)\n./notebooks/python/Subsetted_map.py:41:29: E201 whitespace after '('\n./notebooks/python/Subsetted_map.py:41:37: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:41:41: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:41:51: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:41:53: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:41:55: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:33: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:37: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:41: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:51: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:53: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:42:55: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:44:28: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:24: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:26: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:30: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:44: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:48: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:46:53: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:47:27: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:47:44: E231 missing whitespace after ','\n./notebooks/python/Subsetted_map.py:51:1: W391 blank line at end of file\n./notebooks/python/DTR.py:4:80: E501 line too long (81 > 79 characters)\n./notebooks/python/DTR.py:17:80: E501 line too long (90 > 79 characters)\n./notebooks/python/DTR.py:32:80: E501 line too long (90 > 79 characters)\n./notebooks/python/DTR.py:65:13: W291 trailing whitespace\n./notebooks/python/DTR.py:77:11: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/DTR.py:77:13: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/DTR.py:87:1: E402 module level import not at top of file\n./notebooks/python/DTR.py:88:1: F401 'mpl_toolkits.basemap.cm' imported but unused\n./notebooks/python/DTR.py:88:1: E402 module level import not at top of file\n./notebooks/python/DTR.py:89:1: E402 module level import not at top of file\n./notebooks/python/DTR.py:97:3: E221 multiple spaces before operator\n./notebooks/python/DTR.py:97:24: E231 missing whitespace after ','\n./notebooks/python/DTR.py:97:28: E231 missing whitespace after ','\n./notebooks/python/DTR.py:97:32: E231 missing whitespace after ','\n./notebooks/python/DTR.py:99:31: E231 missing whitespace after ','\n./notebooks/python/DTR.py:99:42: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/DTR.py:99:46: E231 missing whitespace after ','\n./notebooks/python/DTR.py:99:57: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/DTR.py:99:73: E231 missing whitespace after ','\n./notebooks/python/DTR.py:99:80: E501 line too long (103 > 79 characters)\n./notebooks/python/DTR.py:102:29: E201 whitespace after '('\n./notebooks/python/DTR.py:102:37: E231 missing whitespace after ','\n./notebooks/python/DTR.py:102:41: E231 missing whitespace after ','\n./notebooks/python/DTR.py:102:51: E231 missing whitespace after ','\n./notebooks/python/DTR.py:102:53: E231 missing whitespace after ','\n./notebooks/python/DTR.py:102:55: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:33: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:37: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:41: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:51: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:53: E231 missing whitespace after ','\n./notebooks/python/DTR.py:103:55: E231 missing whitespace after ','\n./notebooks/python/DTR.py:105:28: E231 missing whitespace after ','\n./notebooks/python/DTR.py:107:20: E231 missing whitespace after ','\n./notebooks/python/DTR.py:107:23: E231 missing whitespace after ','\n./notebooks/python/DTR.py:109:24: E231 missing whitespace after ','\n./notebooks/python/DTR.py:109:26: E231 missing whitespace after ','\n./notebooks/python/DTR.py:109:30: E231 missing whitespace after ','\n./notebooks/python/DTR.py:109:36: E231 missing whitespace after ','\n./notebooks/python/DTR.py:110:27: E231 missing whitespace after ','\n./notebooks/python/DTR.py:119:1: W391 blank line at end of file\n./notebooks/python/Tropical_nights.py:4:80: E501 line too long (111 > 79 characters)\n./notebooks/python/Tropical_nights.py:5:80: E501 line too long (106 > 79 characters)\n./notebooks/python/Tropical_nights.py:19:80: E501 line too long (106 > 79 characters)\n./notebooks/python/Tropical_nights.py:20:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:21:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:22:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:23:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:23:43: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:23:80: E501 line too long (82 > 79 characters)\n./notebooks/python/Tropical_nights.py:24:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:25:5: E128 continuation line under-indented for visual indent\n./notebooks/python/Tropical_nights.py:26:5: E124 closing bracket does not match visual indentation\n./notebooks/python/Tropical_nights.py:34:80: E501 line too long (80 > 79 characters)\n./notebooks/python/Tropical_nights.py:59:1: E402 module level import not at top of file\n./notebooks/python/Tropical_nights.py:60:1: F401 'mpl_toolkits.basemap.cm' imported but unused\n./notebooks/python/Tropical_nights.py:60:1: E402 module level import not at top of file\n./notebooks/python/Tropical_nights.py:61:1: E402 module level import not at top of file\n./notebooks/python/Tropical_nights.py:69:3: E221 multiple spaces before operator\n./notebooks/python/Tropical_nights.py:69:24: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:69:28: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:69:32: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:71:31: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:71:42: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Tropical_nights.py:71:46: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:71:57: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Tropical_nights.py:71:73: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:71:80: E501 line too long (103 > 79 characters)\n./notebooks/python/Tropical_nights.py:74:29: E201 whitespace after '('\n./notebooks/python/Tropical_nights.py:74:37: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:74:41: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:74:51: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:74:53: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:74:55: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:33: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:37: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:41: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:51: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:53: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:75:55: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:77:28: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:79:20: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:79:24: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:81:24: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:81:26: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:81:30: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:81:36: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:82:27: E231 missing whitespace after ','\n./notebooks/python/Tropical_nights.py:91:1: W391 blank line at end of file\n./notebooks/python/Aggregated_map.py:8:1: F401 'PyOphidia.client' imported but unused\n./notebooks/python/Aggregated_map.py:16:72: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:16:80: E501 line too long (132 > 79 characters)\n./notebooks/python/Aggregated_map.py:16:86: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:16:101: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:16:123: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:17:40: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:26:1: E402 module level import not at top of file\n./notebooks/python/Aggregated_map.py:27:1: F401 'mpl_toolkits.basemap.cm' imported but unused\n./notebooks/python/Aggregated_map.py:27:1: E402 module level import not at top of file\n./notebooks/python/Aggregated_map.py:28:1: E402 module level import not at top of file\n./notebooks/python/Aggregated_map.py:35:3: E221 multiple spaces before operator\n./notebooks/python/Aggregated_map.py:35:24: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:35:28: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:35:32: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:37:31: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:37:42: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Aggregated_map.py:37:46: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:37:57: E251 unexpected spaces around keyword / parameter equals\n./notebooks/python/Aggregated_map.py:37:73: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:37:80: E501 line too long (103 > 79 characters)\n./notebooks/python/Aggregated_map.py:40:29: E201 whitespace after '('\n./notebooks/python/Aggregated_map.py:40:37: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:40:41: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:40:51: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:40:53: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:40:55: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:33: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:37: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:41: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:51: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:53: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:41:55: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:43:28: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:45:22: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:45:26: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:47:24: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:47:26: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:47:30: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:47:36: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:48:27: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:58:67: E231 missing whitespace after ','\n./notebooks/python/Aggregated_map.py:58:80: E501 line too long (89 > 79 characters)\n./notebooks/python/Time_series_difference.py:8:1: F401 'PyOphidia.client' imported but unused\n./notebooks/python/Time_series_difference.py:12:80: E501 line too long (107 > 79 characters)\n./notebooks/python/Time_series_difference.py:16:72: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:16:80: E501 line too long (110 > 79 characters)\n./notebooks/python/Time_series_difference.py:16:86: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:16:101: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:17:54: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:17:80: E501 line too long (93 > 79 characters)\n./notebooks/python/Time_series_difference.py:17:84: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:18:55: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:18:80: E501 line too long (96 > 79 characters)\n./notebooks/python/Time_series_difference.py:18:87: E231 missing whitespace after ','\n./notebooks/python/Time_series_difference.py:27:1: E402 module level import not at top of file\n./notebooks/python/Time_series_difference.py:35:80: E501 line too long (120 > 79 characters)\n./notebooks/python/Time_series_difference.py:37:1: W391 blank line at end of file"
+                        },
+                        {
+                            "valid": false,
+                            "message": "JSON files are not fully compliant with jsonlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "jsonlint",
+                                "lang": "JSON",
+                                "version": "1.6.3",
+                                "docker": {
+                                    "dockerfile": "QC.Sty/jsonlint/Dockerfile",
+                                    "reviewed": "2021-11-23"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty github.com/PalomoIFCA/testeractions jsonlint",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "jsonlint-cli \"**/*.json\""
+                                    ],
+                                    "stdout_text": "/sqaaas-build/github.com/PalomoIFCA/testeractions/clipc/snow_off/Lenght_snow_season.json parse:\nParse error on line 34:\n...g3\",\t\t\t\"operator\": \"oph_apply\t\t\",\t\t\t\"a\n----------------------^\nExpecting 'STRING', 'NUMBER', 'NULL', 'TRUE', 'FALSE', '{', '[', got 'undefined'",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/97/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Uni": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Uni01": {
+                    "description": "Are the tests passing through an automated means?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the failing test cases found by the {tool_name} tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Test cases are not passing using None testing framework",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "pytest",
+                                "lang": "Python",
+                                "version": "7.1.3",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-pytest:7.1.3-alpha",
+                                    "reviewed": "2023-08-09"
+                                },
+                                "ci": {
+                                    "name": "QC.Uni github.com/PalomoIFCA/testeractions pytest",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "pytest  --json-report  --json-report-indent 4"
+                                    ],
+                                    "stdout_text": "============================= test session starts ==============================\nplatform linux -- Python 3.9.17, pytest-7.1.3, pluggy-1.2.0\nrootdir: /sqaaas-build/github.com/PalomoIFCA/testeractions\nplugins: metadata-3.0.0, json-report-1.5.0\ncollected 0 items\n\n--------------------------------- JSON report ----------------------------------\nreport saved to: .report.json\n============================ no tests ran in 0.04s =============================",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/106/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Ver": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Ver01.0": {
+                    "description": "Are tags being used for releasing software",
+                    "requirement_level": "MUST",
+                    "hint": "Git tags are a convenient way to release software. This subcriterion checks if any git tag is present in the code history. More info on it-scm.com/book/en/v2/Git-Basics-Tagging\" target=\"_blank\">git tagging</a>",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "The code repository uses tags for releasing new software versions",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/PalomoIFCA/testeractions get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['v0.7', 'v0.6', 'v0.5', 'v0.4', 'v0.3', 'v0.2', 'v0.1']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "v0.7",
+                                "v0.6",
+                                "v0.5",
+                                "v0.4",
+                                "v0.3",
+                                "v0.2",
+                                "v0.1"
+                            ]
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Ver01": {
+                    "description": "Is the latest release compliant with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Latest tag must be compliant with <a href=\"https://semver.org\" target=\"_blank\">SemVer specification</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Latest release tag v0.7 found, but is not SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/PalomoIFCA/testeractions get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['v0.7', 'v0.6', 'v0.5', 'v0.4', 'v0.3', 'v0.2', 'v0.1']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "v0.7",
+                                "v0.6",
+                                "v0.5",
+                                "v0.4",
+                                "v0.3",
+                                "v0.2",
+                                "v0.1"
+                            ]
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                },
+                "QC.Ver02": {
+                    "description": "Are all release tags with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Existent release tags shall be <a href=\"https://semver.org\" target=\"_blank\">SemVer</a> compliant for this subcriterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Not all release tags are SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver github.com/PalomoIFCA/testeractions get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['v0.7', 'v0.6', 'v0.5', 'v0.4', 'v0.3', 'v0.2', 'v0.1']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/testeractions.assess.sqaaas/job/master/20/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/testeractions.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "v0.7",
+                                "v0.6",
+                                "v0.5",
+                                "v0.4",
+                                "v0.3",
+                                "v0.2",
+                                "v0.1"
+                            ]
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 33,
+                "total_subcriteria": 3,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Met": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Met01": {
+                    "description": "Is the software citable?",
+                    "valid": false,
+                    "hint": "The two formats for software citation supported by SQAaaS are: 1) <a href=\"https://codemeta.github.io/\" target=\"_blank\">CodeMeta</a> and 2) <a href=\"https://citation-file-format.github.io/\" target=\"_blank\">Citation File Format (CFF)</a>. While CodeMeta provides you with a more comprehensive description, CFF is a more lightweight, good-enough approach to software (with built-in support by GitHub) citation. Both provide tools (<a href=\"https://codemeta.github.io/codemeta-generator/\" target=\"_blank\">CodeMeta generator</a>, <a href=\"https://citation-file-format.github.io/cff-initializer-javascript/#/\" target=\"_blank\">CFFINIT</a>)to easily generate a working citation file. Once having the file, be sure to add it to the root path of your code repo.",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "No matching files found for language <CodeMeta> in repository searching by extensions or filenames\nNo matching files found for language <Citation File Format> in repository searching by extensions or filenames"
+                        }
+                    ],
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        }
+    },
+    "badge": {
+        "software": {
+            "criteria": {
+                "bronze": {
+                    "to_fulfill": [
+                        "QC.Lic",
+                        "QC.Acc",
+                        "QC.Doc"
+                    ],
+                    "missing": [
+                        "QC.Lic",
+                        "QC.Doc"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc"
+                    ]
+                },
+                "silver": {
+                    "to_fulfill": [
+                        "QC.Acc",
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Lic",
+                        "QC.Ver"
+                    ],
+                    "missing": [
+                        "QC.Lic",
+                        "QC.Doc",
+                        "QC.Met"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc",
+                        "QC.Ver"
+                    ]
+                },
+                "gold": {
+                    "to_fulfill": [
+                        "QC.Acc",
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Sec",
+                        "QC.Lic",
+                        "QC.Sty",
+                        "QC.Uni",
+                        "QC.Ver"
+                    ],
+                    "missing": [
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Lic",
+                        "QC.Sty",
+                        "QC.Uni"
+                    ],
+                    "fulfilled": [
+                        "QC.Sec",
+                        "QC.Acc",
+                        "QC.Ver"
+                    ]
+                }
+            },
+            "data": {}
+        }
+    }
+}
