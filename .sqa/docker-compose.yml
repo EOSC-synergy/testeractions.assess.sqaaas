@@ -1,5 +1,5 @@
 services:
-  qc.sty_gloppy-celadon-mole:
+  qc.sty_homely-rust-javanese:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile

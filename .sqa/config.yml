@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-salmon-burmese.sh
-        container: qc.sty_gloppy-celadon-mole
+        - /usr/bin/env sh .sqa/script.cheeky-gold-avocet.sh
+        container: qc.sty_homely-rust-javanese
 timeout: 5400
