@@ -1,5 +1,5 @@
 services:
-  qc.sty_stuffy-goldenrod-beetle:
+  qc.sty_shabby-gamboge-shark:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
