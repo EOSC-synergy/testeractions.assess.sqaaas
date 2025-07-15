@@ -1,5 +1,5 @@
 services:
-  qc.sty_dorky-mustard-kangaroo:
+  qc.sty_gloppy-celadon-mole:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
