@@ -1,5 +1,5 @@
 services:
-  qc.sty_gamy-magenta-swan:
+  qc.sty_droopy-purple-bandicoot:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
