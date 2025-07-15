@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.baggy-malachite-bat.sh
-        container: qc.sty_scaly-cobalt-shrimp
+        - /usr/bin/env sh .sqa/script.leaky-olivine-ferret.sh
+        container: qc.sty_dorky-mustard-kangaroo
 timeout: 5400
