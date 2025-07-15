@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.stealthy-red-havanese.sh
-        container: qc.sty_droopy-purple-bandicoot
+        - /usr/bin/env sh .sqa/script.pasty-tomato-eel.sh
+        container: qc.sty_skanky-azure-shark
 timeout: 5400

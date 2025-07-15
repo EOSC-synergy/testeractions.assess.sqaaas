@@ -1,5 +1,5 @@
 services:
-  qc.sty_droopy-purple-bandicoot:
+  qc.sty_skanky-azure-shark:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
