@@ -1,5 +1,5 @@
 services:
-  qc.sty_freaky-gold-dalmatian:
+  qc.sty_scaly-cobalt-shrimp:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
