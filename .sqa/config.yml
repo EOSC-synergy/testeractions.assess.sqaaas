@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: feature/Ophidia
+      branch: feature/Ophidiacwl
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/PalomoIFCA/testeractions:
       branch: devel
@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-tan-devil.sh
-        container: qc.sty_lousy-carmine-sparrow
+        - /usr/bin/env sh .sqa/script.leaky-emerald-quetzal.sh
+        container: qc.sty_gamy-magenta-swan
 timeout: 5400
