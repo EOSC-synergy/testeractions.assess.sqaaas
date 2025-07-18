@@ -1,5 +1,5 @@
 services:
-  qc.sty_shabby-gamboge-shark:
+  qc.sty_scaly-peach-dane:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
