@@ -1,5 +1,5 @@
 services:
-  qc.sty_whiny-puce-toucan:
+  qc.sty_cloudy-flax-quail:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
