@@ -1,5 +1,5 @@
 services:
-  qc.sty_cozy-amber-lemming:
+  qc.sty_frumpy-teal-labradoodle:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
