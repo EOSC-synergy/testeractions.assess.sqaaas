@@ -1,5 +1,5 @@
 services:
-  qc.sty_wheezy-seashell-dalmatian:
+  qc.sty_hasty-tangerine-indri:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
