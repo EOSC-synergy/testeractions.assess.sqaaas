@@ -1,5 +1,5 @@
 services:
-  qc.sty_frumpy-teal-labradoodle:
+  qc.sty_wiggy-heliotrope-snail:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
