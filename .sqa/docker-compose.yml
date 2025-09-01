@@ -1,5 +1,5 @@
 services:
-  qc.sty_scummy-platinum-goose:
+  qc.sty_muggy-pink-neanderthal:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
