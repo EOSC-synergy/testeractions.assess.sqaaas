@@ -1,5 +1,5 @@
 services:
-  qc.sty_wiggy-bistre-wolverine:
+  qc.sty_wimpy-cerise-collie:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
