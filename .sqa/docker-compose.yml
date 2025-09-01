@@ -1,5 +1,5 @@
 services:
-  qc.sty_stealthy-ochre-urchin:
+  qc.sty_paltry-bronze-affenpinscher:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
