@@ -2,67 +2,19 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: main
+      branch: feature/Ophidia
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/PalomoIFCA/testeractions:
-      branch: master
+      branch: intertwin
       repo: https://github.com/PalomoIFCA/testeractions
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
-  QC.Acc:
-    repos:
-      github.com/PalomoIFCA/testeractions git:
-        commands:
-        - /usr/bin/env sh .sqa/script.hasty-green-tapir.sh
-        container: qc.acc_crappy-wheat-crocodile
-  QC.Doc:
-    repos:
-      github.com/PalomoIFCA/testeractions find_doc_files.py:
-        commands:
-        - /usr/bin/env sh .sqa/script.sickly-alizarin-dog.sh
-        container: qc.doc_bluesy-cream-millipede
-      github.com/PalomoIFCA/testeractions git:
-        commands:
-        - /usr/bin/env sh .sqa/script.geeky-brown-akita.sh
-        container: qc.doc_gamy-alizarin-gharial
-      github.com/PalomoIFCA/testeractions markdownlint:
-        commands:
-        - /usr/bin/env sh .sqa/script.shaky-thistle-javanese.sh
-        container: qc.doc_chummy-emerald-argentino
-  QC.Lic:
-    repos:
-      github.com/PalomoIFCA/testeractions licensee:
-        commands:
-        - /usr/bin/env sh .sqa/script.flabby-xanthic-caiman.sh
-        container: qc.lic_cozy-saffron-flounder
-  QC.Sec:
-    repos:
-      github.com/PalomoIFCA/testeractions bandit:
-        commands:
-        - /usr/bin/env sh .sqa/script.lumpy-chartreuse-mist.sh
-        container: qc.sec_scaly-crimson-moth
   QC.Sty:
     repos:
-      github.com/PalomoIFCA/testeractions flake8:
+      github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.snappy-cobalt-coral.sh
-        container: qc.sty_chewy-apricot-impala
-      github.com/PalomoIFCA/testeractions jsonlint:
-        commands:
-        - /usr/bin/env sh .sqa/script.skimpy-jade-squid.sh
-        container: qc.sty_zippy-tomato-mastiff
-  QC.Uni:
-    repos:
-      github.com/PalomoIFCA/testeractions pytest:
-        commands:
-        - /usr/bin/env sh .sqa/script.muggy-amber-mouse.sh
-        container: qc.uni_crabby-smalt-flamingo
-  QC.Ver:
-    repos:
-      github.com/PalomoIFCA/testeractions get_git_tags.py:
-        commands:
-        - /usr/bin/env sh .sqa/script.silly-lime-discus.sh
-        container: qc.ver_chummy-seashell-newt
+        - /usr/bin/env sh .sqa/script.crappy-salmon-caracal.sh
+        container: qc.sty_muggy-firebrick-quetzal
 timeout: 5400
