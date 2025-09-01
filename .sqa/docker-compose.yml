@@ -1,5 +1,5 @@
 services:
-  qc.sty_muggy-firebrick-quetzal:
+  qc.sty_wheezy-seashell-dalmatian:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
