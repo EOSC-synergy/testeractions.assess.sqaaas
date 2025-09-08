@@ -1,5 +1,5 @@
 services:
-  qc.sty_queasy-xanthic-serval:
+  qc.sty_skinny-sapphire-dugong:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile

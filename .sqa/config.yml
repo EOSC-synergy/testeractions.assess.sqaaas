@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: feature/Ophidia
+      branch: feature/Ophidia-test
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/PalomoIFCA/testeractions:
       branch: devel
@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.flimsy-salmon-warthog.sh
-        container: qc.sty_queasy-xanthic-serval
+        - /usr/bin/env sh .sqa/script.trippy-amethyst-retriever.sh
+        container: qc.sty_skinny-sapphire-dugong
 timeout: 5400
