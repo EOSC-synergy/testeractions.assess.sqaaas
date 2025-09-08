@@ -1,5 +1,5 @@
 services:
-  qc.sty_stealthy-lavender-barracuda:
+  qc.sty_bluesy-peach-mau:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
