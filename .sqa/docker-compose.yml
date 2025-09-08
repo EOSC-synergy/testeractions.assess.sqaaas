@@ -1,5 +1,5 @@
 services:
-  qc.sty_lanky-cinnabar-barnacle:
+  qc.sty_scummy-orange-turtle:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile

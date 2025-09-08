@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.scummy-lemon-dolphin.sh
-        container: qc.sty_lanky-cinnabar-barnacle
+        - /usr/bin/env sh .sqa/script.stealthy-burgundy-angelfish.sh
+        container: qc.sty_scummy-orange-turtle
 timeout: 5400
