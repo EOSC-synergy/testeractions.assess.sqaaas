@@ -1,5 +1,5 @@
 services:
-  qc.sty_messy-firebrick-maltese:
+  qc.sty_foggy-carmine-quoll:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
