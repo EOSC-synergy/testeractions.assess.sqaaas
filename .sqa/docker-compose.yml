@@ -1,5 +1,5 @@
 services:
-  qc.sty_blurry-charcoal-catfish:
+  qc.sty_whiny-alizarin-argentino:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
