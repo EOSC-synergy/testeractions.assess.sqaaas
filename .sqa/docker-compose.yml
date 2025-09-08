@@ -1,5 +1,5 @@
 services:
-  qc.sty_messy-dandelion-wildebeest:
+  qc.sty_snappy-heliotrope-jaguar:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
