@@ -1,5 +1,5 @@
 services:
-  qc.sty_muggy-olive-slug:
+  qc.sty_fuzzy-salmon-peccary:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
