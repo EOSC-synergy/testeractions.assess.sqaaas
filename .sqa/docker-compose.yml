@@ -1,5 +1,5 @@
 services:
-  qc.sty_sleazy-purple-audemer:
+  qc.sty_flaky-amethyst-discus:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
