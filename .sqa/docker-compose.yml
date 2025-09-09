@@ -1,5 +1,5 @@
 services:
-  qc.sty_leaky-teal-rattlesnake:
+  qc.sty_scummy-malachite-wrasse:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
