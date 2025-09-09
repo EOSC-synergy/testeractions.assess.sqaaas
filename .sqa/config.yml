@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.randy-cinnamon-snake.sh
-        container: qc.sty_scummy-malachite-wrasse
+        - /usr/bin/env sh .sqa/script.wheezy-chartreuse-havanese.sh
+        container: qc.sty_skanky-cinnabar-seahorse
 timeout: 5400
