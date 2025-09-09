@@ -1,5 +1,5 @@
 services:
-  qc.sty_woolly-olive-anteater:
+  qc.sty_squeaky-jade-bear:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
