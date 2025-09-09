@@ -1,5 +1,5 @@
 services:
-  qc.sty_hazy-brown-reindeer:
+  qc.sty_tacky-sangria-magpie:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
