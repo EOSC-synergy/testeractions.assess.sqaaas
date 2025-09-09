@@ -1,5 +1,5 @@
 services:
-  qc.sty_pokey-zucchini-abyssinian:
+  qc.sty_snoopy-fuchsia-sponge:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
