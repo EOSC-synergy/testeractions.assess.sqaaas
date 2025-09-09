@@ -1,5 +1,5 @@
 services:
-  qc.sty_randy-flax-yak:
+  qc.sty_lovely-burgundy-ibis:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
