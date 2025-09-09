@@ -1,5 +1,5 @@
 services:
-  qc.sty_lousy-saffron-impala:
+  qc.sty_hazy-brown-reindeer:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
