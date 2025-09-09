@@ -1,5 +1,5 @@
 services:
-  qc.sty_gloppy-puce-lynx:
+  qc.sty_leaky-teal-rattlesnake:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
