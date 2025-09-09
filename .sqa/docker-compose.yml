@@ -1,5 +1,5 @@
 services:
-  qc.sty_sleazy-beige-peccary:
+  qc.sty_baggy-indigo-bongo:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
