@@ -1,5 +1,5 @@
 services:
-  qc.sty_shaky-persimmon-ray:
+  qc.sty_wiggy-zucchini-ant:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
