@@ -1,5 +1,5 @@
 services:
-  qc.sty_hasty-gold-numbat:
+  qc.sty_snappy-olive-squid:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
