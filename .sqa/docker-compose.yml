@@ -1,5 +1,5 @@
 services:
-  qc.sty_snoopy-fuchsia-sponge:
+  qc.sty_messy-aqua-ladybird:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
