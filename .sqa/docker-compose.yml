@@ -1,5 +1,5 @@
 services:
-  qc.sty_skanky-puce-shrimp:
+  qc.sty_pokey-zucchini-abyssinian:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
