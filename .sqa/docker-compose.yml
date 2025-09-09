@@ -1,5 +1,5 @@
 services:
-  qc.sty_skanky-russet-coral:
+  qc.sty_muzzy-indigo-fox:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
