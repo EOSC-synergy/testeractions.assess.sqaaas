@@ -1,5 +1,5 @@
 services:
-  qc.sty_squeaky-jade-bear:
+  qc.sty_hasty-gold-numbat:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
