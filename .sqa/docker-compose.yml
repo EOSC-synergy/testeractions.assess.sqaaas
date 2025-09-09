@@ -1,5 +1,5 @@
 services:
-  qc.sty_sleepy-linen-quail:
+  qc.sty_surly-bistre-abyssinian:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
