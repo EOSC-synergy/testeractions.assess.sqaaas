@@ -1,5 +1,5 @@
 services:
-  qc.sty_smelly-cerulean-quetzal:
+  qc.sty_muzzy-puce-mule:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile

@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.muggy-green-mole.sh
-        container: qc.sty_smelly-cerulean-quetzal
+        - /usr/bin/env sh .sqa/script.fuzzy-lemon-uakari.sh
+        container: qc.sty_muzzy-puce-mule
 timeout: 5400
