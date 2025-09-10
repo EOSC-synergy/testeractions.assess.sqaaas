@@ -1,5 +1,5 @@
 services:
-  qc.sty_dorky-brass-zorse:
+  qc.sty_stuffy-wheat-chin:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
