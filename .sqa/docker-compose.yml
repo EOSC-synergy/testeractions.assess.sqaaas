@@ -1,5 +1,5 @@
 services:
-  qc.sty_droopy-olive-monkey:
+  qc.sty_squeaky-scarlet-peccary:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
