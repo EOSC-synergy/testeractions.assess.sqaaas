@@ -1,5 +1,5 @@
 services:
-  qc.sty_muzzy-puce-mule:
+  qc.sty_gimpy-tangerine-kingfisher:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile

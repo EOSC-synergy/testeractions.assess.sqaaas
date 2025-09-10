@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: feature/Ophidia-test
+      branch: feature/Ophidia-theidocker
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/PalomoIFCA/testeractions:
       branch: devel
@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.fuzzy-lemon-uakari.sh
-        container: qc.sty_muzzy-puce-mule
+        - /usr/bin/env sh .sqa/script.scaly-lemon-dragon.sh
+        container: qc.sty_gimpy-tangerine-kingfisher
 timeout: 5400
