@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.beady-copper-termite.sh
-        container: qc.sty_squirrely-viridian-cougar
+        - /usr/bin/env sh .sqa/script.muggy-green-mole.sh
+        container: qc.sty_smelly-cerulean-quetzal
 timeout: 5400
