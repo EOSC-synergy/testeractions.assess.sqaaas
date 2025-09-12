@@ -1,5 +1,5 @@
 services:
-  qc.sty_zippy-harlequin-zebu:
+  qc.sty_snazzy-amaranth-dragon:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
