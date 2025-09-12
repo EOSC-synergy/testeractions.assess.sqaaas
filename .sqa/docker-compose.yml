@@ -1,5 +1,5 @@
 services:
-  qc.sty_grumpy-saffron-mammoth:
+  qc.sty_zippy-harlequin-zebu:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
