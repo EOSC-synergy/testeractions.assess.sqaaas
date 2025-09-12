@@ -1,5 +1,5 @@
 services:
-  qc.sty_craggy-ochre-dog:
+  qc.sty_grumpy-saffron-mammoth:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
