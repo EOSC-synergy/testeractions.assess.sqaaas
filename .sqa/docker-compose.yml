@@ -1,5 +1,5 @@
 services:
-  qc.sty_gummy-platinum-goat:
+  qc.sty_cranky-chartreuse-uguisu:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
