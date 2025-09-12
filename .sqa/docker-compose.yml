@@ -1,5 +1,5 @@
 services:
-  qc.sty_snazzy-amaranth-dragon:
+  qc.sty_gummy-platinum-goat:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
