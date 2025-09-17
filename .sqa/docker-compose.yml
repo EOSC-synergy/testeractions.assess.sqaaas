@@ -1,5 +1,5 @@
 services:
-  qc.sty_squirrely-bistre-jellyfish:
+  qc.sty_nippy-aquamarine-kangaroo:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile

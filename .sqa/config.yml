@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.zippy-champagne-emu.sh
-        container: qc.sty_squirrely-bistre-jellyfish
+        - /usr/bin/env sh .sqa/script.cheeky-rust-bobcat.sh
+        container: qc.sty_nippy-aquamarine-kangaroo
 timeout: 5400
