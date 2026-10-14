@@ -1,5 +1,5 @@
 services:
-  qc.sty_coffee_authentic_owl:
+  qc.sty_malachite_witty_boa:
     build:
       context: ./github.com/EOSC-synergy/sqaaas-tooling/QC.Sty/pyophidia
       dockerfile: Dockerfile
