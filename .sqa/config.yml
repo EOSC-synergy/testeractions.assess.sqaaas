@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: feature/Ophidia-theidocker
+      branch: fix/updatego
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/PalomoIFCA/testeractions:
       branch: devel
@@ -15,6 +15,6 @@ sqa_criteria:
     repos:
       github.com/PalomoIFCA/testeractions find_oph_workflows.py:
         commands:
-        - /usr/bin/env sh .sqa/script.cheeky-rust-bobcat.sh
-        container: qc.sty_nippy-aquamarine-kangaroo
+        - /usr/bin/env sh .sqa/script.ceru_foolish_eel.sh
+        container: qc.sty_coffee_authentic_owl
 timeout: 5400
