@@ -11,10 +11,66 @@ environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
 sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/PalomoIFCA/testeractions git:
+        commands:
+        - /usr/bin/env sh .sqa/script.wave_apathetic_flamingo.sh
+        container: qc.acc_cardamom_lively_walrus
+  QC.Doc:
+    repos:
+      github.com/PalomoIFCA/testeractions find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.mauve_shy_boa.sh
+        container: qc.doc_wine_melancholy_rhinoceros
+      github.com/PalomoIFCA/testeractions git:
+        commands:
+        - /usr/bin/env sh .sqa/script.marina_timid_lemur.sh
+        container: qc.doc_papaya_philosophical_vulture
+      github.com/PalomoIFCA/testeractions markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.wisteria_patient_phoenix.sh
+        container: qc.doc_sapphire_adventurous_toad
+      github.com/PalomoIFCA/testeractions restructuredtext-lint:
+        commands:
+        - /usr/bin/env sh .sqa/script.raspberry_humble_cockatoo.sh
+        container: qc.doc_espresso_eccentric_roadrunner
+  QC.Lic:
+    repos:
+      github.com/PalomoIFCA/testeractions licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.kiwi_humorous_chameleon.sh
+        container: qc.lic_flint_grateful_dolphin
+  QC.Sec:
+    repos:
+      github.com/PalomoIFCA/testeractions bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.amethyst_spirited_cormorant.sh
+        container: qc.sec_poppy_worried_moose
   QC.Sty:
     repos:
-      github.com/PalomoIFCA/testeractions find_oph_workflows.py:
+      github.com/PalomoIFCA/testeractions flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.seafoam_protective_shark.sh
-        container: qc.sty_malachite_witty_boa
+        - /usr/bin/env sh .sqa/script.cardamom_productive_manta.sh
+        container: qc.sty_turmeric_wondrous_unicorn
+      github.com/PalomoIFCA/testeractions jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.emerald_feisty_dragonfly.sh
+        container: qc.sty_coral_sad_tapir
+      github.com/PalomoIFCA/testeractions pynblint.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.brown_independent_gull.sh
+        container: qc.sty_burgundy_blissful_cheetah
+  QC.Uni:
+    repos:
+      github.com/PalomoIFCA/testeractions pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.saffron_productive_echidna.sh
+        container: qc.uni_clementine_determined_ferret
+  QC.Ver:
+    repos:
+      github.com/PalomoIFCA/testeractions get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.salmon_relaxed_crow.sh
+        container: qc.ver_cloud_passionate_nighthawk
 timeout: 5400
